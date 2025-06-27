@@ -180,12 +180,12 @@ TEMPLATES = [
     },
 ]
 MIDDLEWARE = []
-MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
+# MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
 
 WSGI_APPLICATION = 'disease_prediction.wsgi.application'
 
-ALLOWED_HOSTS = ['https://django-python-hacathon-1.onrender.com']  # Allow all hosts for development purposes
-
+# ALLOWED_HOSTS = ['https://django-python-hacathon-1.onrender.com']  # Allow all hosts for development purposes
+ALLOWED_HOSTS = ["*"]  # Allow all hosts for development purposes
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
