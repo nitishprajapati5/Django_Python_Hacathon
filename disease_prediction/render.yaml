@@ -5,3 +5,17 @@
 #     plan: free
 #     buildCommand: pip install -r requirements.txt
 #     startCommand: gunicorn disease_prediction.wsgi:application --bind 0.0.0.0:$PORT
+services:
+  - type: web
+    name: disease-prediction-app
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn disease_prediction.wsgi
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: disease_prediction.settings
+    buildFilter:
+      paths:
+        - disease_prediction/**
+    rootDir: disease_prediction
