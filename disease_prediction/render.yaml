@@ -1,0 +1,7 @@
+services:
+  - name: disease-prediction
+    type: web
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn disease_prediction.wsgi:application --bind 0.0.0.0:$PORT
